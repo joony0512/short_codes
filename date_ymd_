@@ -1,0 +1,26 @@
+from pyspark.sql import SparkSession
+from pyspark.sql.functions import from_utc_timestamp, from_unixtime, unix_timestamp
+from pyspark.sql.functions import when, col, sum, round, max, count, lit, concat
+from pyspark.sql.window import Window
+from datetime import datetime as dt, timedelta
+from pytz import timezone
+
+
+date_ymd = (dt.now(timezone('Asia/Seoul')) - timedelta(days=1)).strftime('%Y-%m-%d')
+
+
+---spark.sql의 where절에서 사용(interval 1day)
+a = spark.sql(
+    f"""
+    
+    
+    
+    
+WHERE
+     stamp_date='{date_ymd}'
+     
+     
+     
+  """
+).show()
+
